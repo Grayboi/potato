@@ -1,1 +1,29 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spud Motion</title>
+</head>
+<body>
+    <p id="score">Score: 0</p>
+    <img src="potato.webp" id="potato">
+    <style>
+        #score {
+            font-size: 2rem;
+        }
+        #potato {
+            position: absolute;
+            height: 20vh;
+        }
+    </style>
+    <script>
+        document.getElementById('potato').addEventListener('click', function(){
+            document.getElementById('potato').style.top = (Math.floor(Math.random() * 101)).toString() +  'vh'
+            document.getElementById('potato').style.left = (Math.floor(Math.random() * 101)).toString() +  'vw'
+            document.getElementById('score').innerHTML = "Score: "+(parseInt(document.getElementById('score').innerHTML.split(': ')[1]) + 1)
+        })
+    </script>
+</body>
+</html>
